@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-reboot.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome-all.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/custom.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<title>This is LOKI</title>
+</head>
+
+<body ng-app="dataApp" ng-controller="mainController as vm">
+	<div id="content" class="loki">
+		<a href="javascript:void()" class="loki-menu-button" 
+		ng-click="toggle = !toggle">
+			<i class="fas fa-bars"></i>
+		</a>
+		<div class="loki-menu" 
+			ng-class="{'is-toggled': toggle}">
+			
+			<a href="javascript:void()" class="loki-menu__button-close" 
+				ng-click="toggle = !toggle">
+				<i class="fas fa-window-close"></i>
+			</a>
+			<ul>
+				<li>
+					<a href="#section-l" ng-click="toggle = !toggle">ABOUT</a>
+				</li>
+				<li>
+					<a href="#section-project" ng-click="toggle = !toggle">PROJECTS</a>
+				</li>
+				<li>
+					<a href="#section-contact" ng-click="toggle = !toggle">CONTACTS</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Start - Section: Home -->
+		<section id="section-home" class="loki__home">
+			<div class="loki-home__container">
+				<div class="loki-home__text-box">
+					<div class="loki-home__upper-text">
+						<div class="loki-home__upper-text--white">This is</div>
+					</div>
+					<div class="loki-home__brand">
+						<div class="loki-home__brand--white">Loki</div>
+					</div>
+				</div>
+				<div class="loki-home__content">
+					Turning <span class="loki-home__content--small">small</span> ideas into <span
+						class="loki-home__content--big">BIG</span> results
+				</div>
+			</div>
+			<a href="#section-project" class="loki-link">what we have done<i class="fas fa-arrow-alt-circle-right"></i></a>
+		</section>
+		<!-- End - Section: Home -->
+
+		<!-- Start - Section: L -->
+		<section id="section-l" class="loki__l">
+			<div class="loki-title">
+				<span class="loki-title--pink">L</span>OKI
+			</div>
+			<div class="loki-l">
+				<div class="loki-l__container">
+					<div class="loki-l__title-wrapper">
+						<div class="loki-l__title">
+							LESS IS MORE
+						</div>
+						<div class="loki-l__title is-back">
+							L<span class="c-blue">-</span>SS <span class="c-yellow">IS</span> MOR<span class="c-pink">+</span>
+						</div>
+					</div>
+					<div class="loki-l__top">
+						<div class="loki-dict">
+							<div class="loki-dict__title">
+								Minimalism <span>.n</span>
+							</div>
+							<p class="loki-dict__pron">/ˈmɪnɪməˌlɪz(ə)m/</p>
+							<p class="loki-dict__content">
+								<span>1</span> a style or technique that is characterized by extreme spareness and
+								simplicity. focus only on what you need and truly value, leading to business benefits.
+							</p>
+						</div>
+					</div>
+					<div class="loki-l__bottom">
+						Not trying to over complicated things, we will do them at a <span>level of excellence</span>
+						that is unmatched to your competitors.
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: L -->
+
+		<!-- Start - Section: O -->
+		<section id="section-o" class="loki__o">
+			<div class="loki-title loki-title--white">
+				L<span class="loki-title--yellow">O</span>KI
+			</div>
+			<div class="loki-o">
+				<div class="loki-o__top">
+					<div class="loki-dict">
+						<div class="loki-dict__title">
+							Originality <span>.n</span>
+						</div>
+						<p class="loki-dict__pron">/əˌrɪdʒɪˈnalɪti/</p>
+						<p class="loki-dict__content">
+							<span>1</span> the ability to think independently and creatively. <span>2</span> freshness
+							of aspect, design, or style. <span>3</span> the power of independent thought or constructive
+							imagination.
+						</p>
+					</div>
+				</div>
+				<div class="loki-o__bottom">
+					<div class="loki-o__title">
+						<span>Originality</span> at its <span>finest</span>
+					</div>
+					At <span class="brand">LOKI</span>, we develop and implement imaginative solutions to help
+					businesses increase <span>brand awareness</span>, better showcase products or services and,
+					ultimately, <span>increase profits</span>.
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: O -->
+
+		<!-- Start - Section: K -->
+		<section id="section-k" class="loki__k">
+			<div class="loki-title loki-title--black">
+				LO<span class="loki-title--purple">K</span>I
+			</div>
+			<div class="loki-k d-flex">
+				<div class="loki-k__left">
+					<div class="loki-k__container">
+						<div class="loki-k__icon">
+							<i class="fas fa-lightbulb"></i>
+						</div>
+						<div class="loki-k__title">
+							<span>Knowledge</span> is <span>Power</span>
+						</div>
+						<div class="loki-k__content">
+							How to wnow <span>What’s Important to Your Business</span>? With our knowledge and
+							experience, we will help you influence people and change their perspective towards your
+							business to achieve higher presence in your industry.
+						</div>
+					</div>
+				</div>
+				<div class="loki-k__right d-flex align-items-center">
+					<div class="loki-dict">
+						<div class="loki-dict__title">
+							Knowledge <span>.n</span>
+						</div>
+						<p class="loki-dict__pron">/ˈnɒl.ɪdʒ/</p>
+						<p class="loki-dict__content">
+							<span>1</span> the fact or condition of knowing something with familiarity gained through
+							experience or association. <span>2</span> awareness or familiarity gained by experience of a
+							fact or situation.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: K -->
+
+		<!-- Start - Section: I -->
+		<section id="section-i" class="loki__i">
+			<div class="loki-title loki-title--white">
+				LOK<span class="loki-title--blue">I</span>
+			</div>
+			<div class="loki-i">
+				<div class="loki-i__container">
+					<div class="loki-dict">
+						<div class="loki-dict__title">
+							Teamwork <span>.n</span>
+						</div>
+						<p class="loki-dict__pron">/əˌrɪdʒɪˈnalɪti/</p>
+						<p class="loki-dict__content">
+							<span>1</span> the combined effort of a group to achieve a common goal or to complete a task
+							in the most effective and efficient way.
+						</p>
+					</div>
+					<div class="loki-i__content">
+						At <span class="brand">LOKI</span>, we develop and implement imaginative solutions to help
+						businesses increase <span>brand awareness</span>, better showcase products or services and,
+						ultimately, <span>increase profits</span>.
+					</div>
+					<div class="loki-i__title">
+						There is no <span>"I"</span> in team
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: I -->
+
+		<!-- Start - Section: Projects -->
+		<section id="section-project" class="loki__project">
+			<div class="loki-title loki-title--white">
+				<span class="loki-title--pink">L</span><span class="loki-title--yellow">O</span><span
+					class="loki-title--purple">K</span><span class="loki-title--blue">I</span> PROJECTS
+			</div>
+			<div class="loki-projects d-flex align-items-center">
+				<div class="loki-projects__items flex-grow-1 row">
+					<div class="loki-projects__item col-3" 
+						ng-repeat="project in vm.projects" 
+						ng-click="vm.select(project.title)">
+						<div class="loki-projects__img" 
+							ng-class="{'is-active': vm.selected == project.title}" 
+							ng-style="{'background-image': 'url(' + project.imgurl + ')'}"></div>
+						<div class="loki-projects__client">
+							<span class="loki-projects__client-title">
+								Client
+							</span>
+							{{project.client}}
+							<span class="loki-projects__client-channel">
+								Channels
+							</span>
+							{{project.channel}}
+						</div>
+						<article class="loki-projects__view" 
+							ng-class="{'is-active': vm.selected == project.title}">
+							<h2>{{project.title}}</h2>
+							<h5>Challenge</h5>
+							<p>{{project.infotop}}</p>
+							<h5>Idea</h5>
+							<p>{{project.infobottom}}</p>
+							<a href="javascript:void(0)" class="loki-btn">More on this case study</a>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: Projects -->
+
+		<!-- Start - Section: Contacts -->
+		<section id="section-contact" class="loki__contact">
+			<div class="loki-title loki-title--black">
+					CONTACT <span class="loki-title--pink">L</span><span class="loki-title--yellow">O</span><span
+					class="loki-title--purple">K</span><span class="loki-title--blue">I</span>
+			</div>
+			<div class="loki-contact d-flex">
+				<div class="loki-contact__form">
+					<h1>Wake us up!</h1>
+					<form name="userForm" 
+						ng-submit="vm.submitForm(userForm.$valid)" 
+						ng-if="!vm.submitted" novalidate>
+						<div class="loki-contact__form-group">
+							<input type="text" name="name" placeholder="How we address you?" class="loki-contact__input-name" ng-model="name" required>
+							<label>Name</label>
+							<p ng-show="userForm.name.$invalid && userForm.name.$dirty" class="loki-contact__error-msg">Your name is required.</p>
+						</div>
+						<div class="loki-contact__form-group">
+							<input type="number" name="phone" placeholder="Let’s have a chat" class="loki-contact__input-phone" ng-model="phone" required>
+							<label>Contact No.</label>
+							<p ng-show="userForm.phone.$invalid && userForm.phone.$dirty" class="loki-contact__error-msg">Your phone number is required.</p>
+						</div>
+						<div class="loki-contact__form-group">
+							<input type="email" name="email" placeholder="Just a click away" class="loki-contact__input-email" ng-model="email" required>
+							<label>Email</label>
+							<p ng-show="userForm.email.$invalid && userForm.email.$dirty" class="loki-contact__error-msg">Enter a valid email.</p>
+						</div>
+						<button type="submit" class="loki-btn" ng-disabled="userForm.$invalid">Let us help you</button>
+					</form>
+					<div class="loki-contact__form-submitted" ng-if="vm.submitted">
+						<h1>Thank you!</h1>
+						<i class="far fa-bell"></i>
+						<h5>You just ring our bell and one of our Loki-ans will get in touch with you soon.</h5>
+					</div>
+				</div>
+				<div class="loki-contact__details">
+					<h3 class="loki-title--black">We don’t mind drinking more coffee or getting bald, but we do mind if we don’t do something awesome together.</h3>
+					<div class="loki-contact__address-left">
+						<h5>Malaysia</h5>
+						<p>No. 23-2, Jalan Telawi 2,<br />
+						Bangsar Baru,<br />
+						59100, Kuala Lumpur</p>
+						<span>+603 2283 1168</span>
+					</div>
+					<div class="loki-contact__address-right">
+						<h5>Singapore</h5>
+						<p>6 Raffles Boulevard,<br />
+						3-308 Marina Square,<br />
+						039594</p>
+						<span>+65 6932 2727</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End - Section: Contacts -->
+
+		<div class="copyright">2021 &copy; Eugene Chew. This is a sample website design for LOKI.</div>
+
+	</div>
+
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/js/projects-data.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+
+</html>

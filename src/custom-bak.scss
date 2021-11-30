@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+/*!
+ * Autodesk Calendar Event Card core stylesheet
+ * Copyright 2019 Appspace (Malaysia) Sdn Bhd
+ */
+
+
+@import "fonts.min.css";	
+
+
+body {
+	font-family: 'Artifakt Legend Regular', Arial, sans-serif;
+	font-weight: normal;
+}
+
+
+/* Card */
+
+.ad-card {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	padding: 1.625em; // 26px
+	position: fixed;
+	overflow: hidden;
+
+	&__header {
+		font-family: 'Artifakt Legend Book', Arial, sans-serif;
+		color:rgb(118, 118, 118); // #767676
+		text-transform: uppercase;
+	}
+	&__header-left, 
+	&__header-right {
+		height: 3.75rem; // 60px
+	}
+	&__header-left {
+		width: 40rem; // 640px
+		height: 3.75rem; // 60px
+	}
+	&__header-right {
+		font-size: 4.25rem; // 68px
+		justify-content: flex-end;
+		align-items: center;
+		width: 59.375rem; // 950px
+	}
+	&__header-title {
+		font-size: 4.25rem; // 68px
+	}
+
+	&__date {
+		font-size: 3rem; // 48px
+		margin-right: 3rem; // 48px
+	}
+	&__time {
+		font-size: 4.25rem; // 68px
+		margin-left: 1.5rem;  // 24px
+	}
+
+	&__body {
+		width: 100%;
+		height: 51.875rem; // 830px
+	}
+
+	&__footer {
+		width: 100%;
+		height: 5.3125rem; // 85px
+
+		img {
+			width: auto;
+			height: 100%;
+		}
+	}
+}
+
+@media (orientation:portrait) {
+	.ad-card {
+		&__header-left, 
+		&__header-right {
+			height: 3.125rem; // 50px
+		}
+		&__header-left {
+			width: 31.25rem; // 500px
+		}
+		&__header-right {
+			line-height: initial;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			width: 25rem; // 400px
+		}
+		&__header-title {
+			font-size: 3.375rem; // 54px
+			font-weight: 400;
+		}
+
+		&__date {
+			font-size: 1.5rem; // 24px
+			order: 2;
+			margin-right: 0;
+		}
+		&__separator {
+			display: none;
+		}
+		&__time {
+			font-size: 2rem; // 32px
+			font-weight: 400;
+			order: 1;
+		}
+	}
+}
+
+
+
+.ad-event {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	list-style: none;
+	margin: 0;
+    width: 100%;
+	height: 100%;
+	padding: 0 1.5rem;  // 0 24px
+	
+	> li {
+		flex: 1;
+		padding-top: 1.5rem;  // 24px
+		padding-bottom: 1.5rem;  // 24px
+
+		+ li {
+			border-top-width: 0.3125rem; // 5px
+			border-top-style: dotted;
+		}
+	}
+
+	&__content-wrapper, 
+	&__content {
+		flex: 1;
+		min-width: 0; // reset settings for flex items min-width: auto
+		// to enable text-overflow: ellipsis to work
+	}
+	&__content-wrapper {
+		&.end-of-listing {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+	&__content {
+		> div {
+			padding-left: 1.5rem;  // 24px
+			padding-right: 1.5rem;  // 24px
+
+			&:first-child { padding-left: 0; }
+			&:last-child, 
+			&.ad-event__timestamp {
+				padding-right: 0;
+			}
+		}
+	}
+	&__timestamp {
+		min-width: 27.5rem; // 440px
+
+		> div {
+			padding-left: 1.5rem;  // 24px
+			padding-right: 1.5rem;  // 24px
+
+			&:first-child { padding-left: 0; }
+			&:last-child { padding-right: 0; }
+		}
+	}
+	&__day {
+		font-size: 4.25rem; // 68px
+		text-transform: uppercase;
+		line-height: initial;
+		min-width: 11.875rem; // 190px
+	}
+	&__time {
+		text-transform: uppercase;
+		font-weight: 300;
+		min-width: 17.5rem; // 280px;
+	}
+	&__time-text {
+		font-size: 1rem;
+		width: 3.375rem; // 54px
+	}
+	&__time-icon {
+		padding-right: 1rem;
+
+		> img {
+			width: 1.75rem; // 28px
+			height: 1.75rem; // 28px
+		}
+	}
+	&__time-start, 
+	&__time-end {
+		font-size: 2rem; // 32px;
+	}
+	&__time-end {
+		line-height: initial;
+	}
+	&__details {
+		letter-spacing: 0.0625rem; // 1px
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	&__title {
+		font-family: 'Artifakt Legend Book', Arial, sans-serif;
+		font-size: 2.25rem; // 36px;
+		line-height: initial;
+		margin-bottom: 0.125rem; // 2px
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&__location {
+		font-size: 1.5rem;  // 24px
+		font-weight: 300;
+
+		> img {
+			width: auto;
+			height: 1.75rem; // 28px
+			margin-right: 0.75rem; // 12px
+		}
+	}
+	&__status {
+		font-family: 'Artifakt Legend Book', Arial, sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 0.0625rem; // 1px
+		min-width: 7.5rem; // 120px
+	}
+}
+
+
+
+
+
+@media (orientation:portrait)
+{
+
+}
+@media (orientation:landscape)
+{
+}
+
+.aaa {background-color: red;}
+.bbb {background-color: yellow;}
+.ccc {background-color: green;}
+.ddd {background-color: blue;}
+.eee {background-color: white;}
+.fff {background-color: black;}

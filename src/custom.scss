@@ -1,0 +1,1155 @@
+@charset "UTF-8";
+
+/*!
+ * LOKI Static Sample Website core stylesheet
+ * Copyright 2021 Eugene Chew
+ */
+
+
+@import "fonts.scss";	
+
+/* ============================================================ */
+/* Variables */
+
+$base-width:					 100vw / 1920; // 100vw / 1920px
+$base-height:					 100vh / 1080; // 100vh / 1080px
+
+$brand-primary:					 #000000;
+$brand-secondary: 				 #FFFFFF;
+
+$h2-color:						 #FDCC66;
+$h5-color:						 #666666;
+
+$menu-bg-color:					 #111111;
+$menu-color-link: 				 $brand-secondary;
+$menu-color-link-hover: 		 #FDCC66;
+$menu-btn-color:				 $brand-secondary;
+$menu-btn-close-color:			 #FDCC66;
+
+$title-color-black:				 $brand-primary;
+$title-color-white:				 $brand-secondary;
+$title-color-pink:				 #FE2AA9;
+$title-color-yellow:			 #FDCC66;
+$title-color-purple:			 #451BDF;
+$title-color-blue:			 	 #56CFE0;
+
+$projects-color-title:			 $title-color-yellow;
+
+$form-bg-color:					 #CCCCCC;
+$form-bg-label:					 $brand-secondary;
+$form-color-label-focus:	 	 $brand-primary;
+$form-color-label:				 #CCCCCC;
+$form-color-input:				 $brand-secondary;
+$form-color-input-border:	  	 #666666;
+$form-color-submit-border:	  	 $title-color-yellow;
+$form-color-input-placeholder:	 #CCCCCC;
+$form-color-input-focus:	 	 $brand-primary;
+$form-color-error:				 #FF0000;
+
+/* ============================================================ */
+
+body {
+	font-family: "Raleway Regular", sans-serif;
+	font-size: $base-width * 16;
+	font-weight: normal;
+}
+h1 {
+	font-family: "Raleway Black", sans-serif;
+	font-size: $base-width * 54;
+	margin-bottom: $base-height * 70;
+}
+h2 {
+	color: $h2-color;
+	font-size: $base-width * 48;
+	padding-bottom: $base-height * 30;
+}
+h3 {
+	font-family: "Raleway SemiBold", sans-serif;
+	font-size: $base-width * 36;
+}
+h5 {
+	font-family: "Raleway Black", sans-serif;
+	color: $h5-color;
+	font-size: $base-width * 22;
+	text-transform: uppercase
+}
+p {
+	margin-bottom: $base-width * 16;
+}
+
+@media (orientation:portrait) {
+	body {
+		font-size: $base-height * 16;
+	}
+	h1 {
+		font-size: $base-height * 54;
+	}
+	h2 {
+		font-size: $base-height * 48;
+	}
+	h3 {
+		font-size: $base-height * 36;
+	}
+	h5 {
+		font-size: $base-height * 22;
+	}
+	p {
+		margin-bottom: $base-height * 16;
+	}
+}
+
+/* ============================================================ */
+/* Content */
+
+.loki {
+	width: 100%;
+
+	&__home {
+		background: $brand-primary url('../images/splash.jpg') no-repeat scroll center;
+		background-size: cover;
+		height: $base-height * 1080;
+	}
+	&__l {
+		background: $brand-secondary url('../images/sec_less-is-more.jpg') no-repeat scroll center;
+		background-size: cover;
+		height: $base-height * 1080;
+		position: relative;
+	}
+	&__o {
+		background: $brand-secondary url('../images/sec_ori-finest.jpg') no-repeat fixed center;
+		background-size: cover;
+		height: $base-height * 1080;
+		position: relative;
+	}
+	&__k {
+		background: $brand-secondary url('../images/sec_knowledge.jpg') no-repeat scroll center;
+		background-size: cover;
+		height: $base-height * 1080;
+		position: relative;
+	}
+	&__i {
+		background: $brand-secondary url('../images/sec_teamwork.jpg') no-repeat fixed center;
+		background-size: cover;
+		height: $base-height * 1080;
+		position: relative;
+	}
+	&__project {
+		background-color: $brand-primary;
+		height: $base-height * 1080;
+		position: relative;
+	}
+	&__contact {
+		background: $brand-secondary url('../images/sec_contact.jpg') no-repeat scroll 100% 130%;
+		background-size: 30%;
+		height: $base-height * 1080;
+		position: relative;
+	}
+}
+
+@media (orientation:portrait) {
+	.loki {
+		&__contact {
+			background-position: 100% 100%;
+			height: auto;
+		}
+	}
+}
+
+/* ============================================================ */
+
+/* ============================================================ */
+/* Section */
+
+.loki-home {
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	&__text-box {
+		padding: ($base-height * 15) ($base-width * 30);
+		position: relative;
+
+		&:before, 
+		&:after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		&:before {
+			border-top: solid 1px white;
+			border-left: solid 1px white;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			animation: topLeftBorderFadeInLeft 1s forwards;
+			animation-delay: 0.9s;
+
+			@keyframes topLeftBorderFadeInLeft {
+				from {
+				  opacity: 0;
+				  transform: translate3d(-10%, 0, 0);
+				}
+			  
+				to {
+				  opacity: 1;
+				  transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+		&:after {
+			border-bottom: solid 1px $brand-secondary;
+			border-right: solid 1px $brand-secondary;
+			top: 0;
+			right: 0;
+			opacity: 0;
+			animation: topLeftBorderFadeInRight 1s forwards;
+			animation-delay: 0.9s;
+
+			@keyframes topLeftBorderFadeInRight {
+				from {
+				  opacity: 0;
+				  transform: translate3d(10%, 0, 0);
+				}
+			  
+				to {
+				  opacity: 1;
+				  transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+	}
+	&__upper-text, 
+	&__brand {
+		text-transform: uppercase;
+	}
+	&__upper-text {
+		font-size: $base-width * 30;
+		line-height: 1;
+		letter-spacing: $base-width * 18;
+		position: relative;
+		opacity: 0;
+		animation: textFadeInUp 1s forwards;
+		animation-delay: 0.5s;
+
+		&--white {
+			color: $brand-secondary;
+		}
+
+		@keyframes textFadeInUp {
+			from {
+			  opacity: 0;
+			  transform: translate3d(0, 150%, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+	&__brand {
+		font-family: 'Raleway Black', sans-serif;
+		font-size: $base-width * 100;
+		line-height: 1;
+		animation: brandFadeInDown 1s forwards;
+
+		&--white {
+			color: $brand-secondary;
+		}
+
+		@keyframes brandFadeInDown {
+			from {
+			  opacity: 0;
+			  transform: translate3d(0, -100%, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+	&__content {
+		color: $brand-secondary;
+		font-size: $base-width * 18;
+		padding: $base-height * 15 0;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		white-space: nowrap;
+
+		&--small {
+			font-family: 'Raleway Extra Light Italic', sans-serif;
+		}
+		&--big {
+			font-family: 'Raleway Black', sans-serif;
+		}
+	}
+}
+
+.loki-l {
+	width: 35%;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+
+	&__title-wrapper {
+		margin-bottom: $base-height * 100;
+		position: relative;
+		left: 0;
+		top: $base-height * -100;
+	}
+	&__title {
+		font-family: 'Raleway Black', sans-serif;
+		font-size: $base-width * 100;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		white-space: nowrap;
+		opacity: 1;
+		transform: translate(-50%,-50%);
+		transition: opacity 0.5s linear 0.2s;
+
+		&.is-back {
+			color: transparent;
+			opacity: 0;
+
+			span {
+				color: white;
+			}
+		}
+	}
+	&__bottom {
+		font-size: $base-width * 40;
+		line-height: 1.3;
+		padding-top: $base-height * 60;
+
+		> span {
+			font-family: 'Raleway Italic', sans-serif;
+		}
+	}
+
+	&.is-active {
+		.loki-l {
+			&__title {
+				opacity: 0;
+
+				&.is-back {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.loki-o {
+	color: $brand-secondary;
+
+	&__top {
+		margin-top: $base-height * 40;
+		width: 100%;
+		padding: 0 5%;
+		text-align: center;
+		position: absolute;
+		top: $base-height * 100;
+	}
+	&__bottom {
+		font-size: $base-width * 40;
+		line-height: 1.3;
+		text-align: center;
+		padding: 0 5%;
+		position: absolute;
+		bottom: $base-height * 100;
+
+		> span {
+			font-family: 'Raleway Italic', sans-serif;
+		}
+
+		> .brand {
+			font-family: 'Raleway Bold', sans-serif;
+		}
+	}
+	&__title {
+		font-size: $base-width * 54;
+		opacity: 0;
+
+		> span {
+			font-family: 'Raleway Bold', sans-serif;
+
+			+ span {
+				font-family: 'Raleway Extra Light Italic', sans-serif;
+			}
+		}
+	}
+	&.is-active {
+		.loki-o {
+			&__title {
+				opacity: 0;
+				animation: brandFadeInDown 2s forwards;
+			}
+		}
+
+		@keyframes brandFadeInDown {
+			from {
+			  opacity: 0;
+			  transform: translate3d(0, -100%, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.loki-k {
+	height: 100%;
+
+	&__left,
+	&__right {
+		flex: 0 0 50%;
+	}
+	&__left {
+		background-color: rgba($brand-secondary, 0.9);
+	}
+	&__right {
+		padding: 0 $base-width * 100;
+
+		.loki-dict {
+			background-color: rgba($brand-secondary, 0.9);
+			padding: $base-height * 20 $base-width * 30;
+			outline: solid $base-width * 2 white;
+			outline-offset: 10px;
+		}
+	}
+	&__container {
+		font-size: $base-width * 18;
+		width: 35%;
+		position: absolute;
+		top: 50%;
+		left: 5%;
+		transform: translateY(-50%);		
+	}
+	&__icon {
+		text-align: center;
+		margin-bottom: $base-height * 60;
+		width: 100%;
+		opacity: 0;
+
+		> i {
+			color: white;
+			font-size: $base-width * 170;
+			animation: glow 1s ease-in-out infinite alternate;
+		}
+
+		@keyframes glow {
+			from {
+			  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #FDCC66, 0 0 40px #FDCC66, 0 0 50px #FDCC66, 0 0 60px #FDCC66, 0 0 70px #FDCC66;
+			}
+			to {
+			  text-shadow: 0 0 20px #fff, 0 0 30px #FF4DA6, 0 0 40px #FF4DA6, 0 0 50px #FF4DA6, 0 0 60px #FF4DA6, 0 0 70px #FF4DA6, 0 0 80px #FF4DA6;
+			}
+		}
+	}
+	&__title {
+		font-family: 'Raleway Medium', sans-serif;
+		font-size: $base-width * 60;
+		opacity: 0;
+
+		> span {
+			font-family: 'Raleway SemiBold Italic', sans-serif;
+
+			+ span {
+				font-family: 'Raleway Black', sans-serif;
+			}
+		}
+	}
+	&__content {
+		opacity: 0;
+
+		> span {
+			font-family: 'Raleway Bold', sans-serif;
+		}
+	}
+	&.is-active {
+		.loki-k {
+			&__icon {
+				animation: bulbFadeInTop 1s forwards;
+				animation-delay: 0.65s;
+			}
+			&__title {
+				animation: titleFadeInLeft 1s forwards;
+			}
+			&__content {
+				animation: titleFadeInBottom 1s forwards;
+				animation-delay: 0.3s;
+			}
+		}
+
+		@keyframes bulbFadeInTop {
+			from {
+			  opacity: 0;
+			  transform: translate3d(0, -30%, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes titleFadeInLeft {
+			from {
+			  opacity: 0;
+			  transform: translate3d(-5%, 0, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes titleFadeInBottom {
+			from {
+			  opacity: 0;
+			  transform: translate3d(0, 50%, 0);
+			}
+		  
+			to {
+			  opacity: 1;
+			  transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.loki-i {
+	color: $brand-secondary;
+
+	&__container {
+		margin-top: $base-height * 40;
+		width: 100%;
+		padding: 0 5%;
+		text-align: center;
+		position: absolute;
+		top: $base-height * 100;
+	}
+	&__content {
+		font-size: $base-width * 40;
+		line-height: 1.3;
+		text-align: center;
+		margin-top: 4%;
+		padding: 0 5%;
+
+		> span {
+			font-family: 'Raleway Italic', sans-serif;
+		}
+
+		> .brand {
+			font-family: 'Raleway Bold', sans-serif;
+		}
+	}
+	&__title {
+		font-size: $base-width * 70;
+		margin-top: $base-height * 50;
+
+		> span {
+			font-family: 'Raleway Bold', sans-serif;
+
+			+ span {
+				font-family: 'Raleway Extra Light Italic', sans-serif;
+			}
+		}
+	}
+	&.is-active {
+		.loki-i {
+			&__title {
+				animation: titleHeartBeat 1s forwards;
+			}
+		}
+		@keyframes titleHeartBeat {
+			0% {
+			  transform: scale(1);
+			}
+		  
+			14% {
+			  transform: scale(1.3);
+			}
+		  
+			28% {
+			  transform: scale(1);
+			}
+		  
+			42% {
+			  transform: scale(1.3);
+			}
+		  
+			70% {
+			  transform: scale(1);
+			}
+		}
+	}
+}
+
+.loki-projects {
+	width: 50%;
+	margin-right: 5%;
+	height: 100%;
+	float: right;
+
+	&__item {
+		padding-left: $base-width * 15;
+		padding-right: $base-width * 15;
+		padding-bottom: $base-height * 30;
+		position: static;
+	}
+	&__img {
+		background-repeat :no-repeat;
+		background-position: 50% 50%;
+		background-size: cover;
+		height: $base-height * 200;
+		outline: solid 0 $projects-color-title;
+		outline-offset: 0;
+		transition: all 0.2s ease-in-out;
+		overflow: hidden;
+
+		&:hover {
+			outline: solid 10px $projects-color-title;
+			outline-offset: -10px;
+		}
+
+		&.is-active {
+			outline: solid 10px $projects-color-title;
+			outline-offset: -10px;
+		}
+	}
+	&__client {
+		color: $brand-secondary;
+		padding-top: $base-height * 15;
+	}
+	&__client-title, 
+	&__client-channel {
+		color: $projects-color-title;
+		font-family: 'Raleway Bold', sans-serif;
+		line-height: 1;
+		display: block;
+	}
+	&__client-channel {
+		margin-top: $base-height * 15;
+	}
+	&__view {
+		color: $brand-secondary;
+		font-size: $base-width * 22;
+		text-align: justify;
+		display: none;
+		width: 30%;
+		position: absolute;
+		top: $base-height * 200;
+		left: 5%;
+
+		p {
+			padding-bottom: $base-height * 20;
+		}
+
+		&.is-active {
+			display: block;
+		}
+	}
+}
+
+.loki-contact {
+	align-items: center;
+	height: 100%;
+	padding: 0 5%;
+
+	&__form {
+		width: 40%;
+
+		form {
+			display: inline-block;
+		}
+	}
+	&__form-group {
+		margin-bottom: $base-height * 40;
+		position: relative;
+
+		label {
+			background: $form-bg-label;
+			color: $form-color-label;
+			font-size: $base-width * 18;
+			display: block;
+			margin-bottom: 0;
+			padding: 0 $base-height * 6;
+			position: absolute;
+			top: $base-height * -15;
+			left: $base-width * 12;
+			transition: all 0.5s linear
+		}
+		input {
+			background-color: $form-color-input;
+			font-size: $base-width * 26;
+			padding: $base-height * 12 $base-width * 12 $base-height * 6;
+			border-radius: 0;
+			border: solid 1px $form-color-input-border;
+			outline: 0;
+
+			&::placeholder {
+				color: $form-color-input-placeholder;
+			}
+		}
+	}
+	&__input-name, 
+	&__input-phone, 
+	&__input-email {
+		&:focus {
+			border-color: $form-color-input-focus;
+
+			+ label {
+				color: $form-color-label-focus;
+			}
+		}
+	}
+	&__error-msg {
+		color: $form-color-error;
+		margin-bottom: $base-height * 5;
+		position: absolute;
+		right: 0;
+		bottom: 100%;
+	}
+	&__submit-btn {
+		border: solid 1px $form-color-submit-border;
+	}
+	&__form-submitted {
+		padding-right: 15%;
+
+		h1, 
+		i {
+			font-size: $base-width * 86;
+		}
+		i {
+			margin-bottom: $base-height * 40;
+		}
+	}
+	&__details {
+		width: 60%;
+		padding-left: $base-width * 40;
+		border-left: dashed 3px black;
+		
+		h3 {
+			margin-bottom: $base-height * 50;
+		}
+	}
+	&__address-left, 
+	&__address-right {
+		span {
+			font-family: 'Raleway Bold', sans-serif;
+			font-size: $base-width * 20;
+		}
+	}
+	&__address-left {
+		margin-bottom: $base-height * 40;
+	}
+}
+
+@media (orientation:portrait) {
+	.loki-home {
+		&__upper-text {
+			font-size: $base-height * 30;
+		}
+		&__brand {
+			font-size: $base-height * 100;
+		}
+		&__content {
+			font-size: $base-height * 18;
+		}
+	}
+
+	.loki-l {
+		text-align: center;
+		width: 100%;
+		padding: 0 $base-width * 200;
+		left: 0;
+
+		&__title {
+			font-size: $base-height * 75;
+		}
+		&__bottom {
+			font-size: $base-height * 40;
+		}
+	}
+
+	.loki-o {
+		&__title {
+			font-size: $base-height * 54;
+		}
+	}
+
+	.loki-k {
+		flex-direction: column;
+		height: 100%;
+	
+		&__left,
+		&__right {
+			flex: 0 0 50%;
+		}
+		&__right {
+			.loki-dict {
+				outline: solid $base-height * 2 white;
+			}
+		}
+		&__container {
+			font-size: $base-height * 18;
+			margin-top: $base-height * 120;
+			width: 100%;
+			padding: 0 $base-height * 20;
+			position: static;
+			transform: none;
+		}
+		&__icon {
+			> i {
+				font-size: $base-height * 80;
+			}
+		}
+		&__title {
+			font-size: $base-height * 60;
+			line-height: 1;
+			margin-bottom: $base-height * 20;
+		}
+	}
+
+	.loki-i {
+		&__content {
+			font-size: $base-height * 26;
+		}
+		&__title {
+			font-size: $base-height * 40;
+		}
+	}
+
+	.loki-projects {
+		margin-right: 0;
+		width: 100%;
+		padding: 0 5%;
+		float: none;
+
+		&__items {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		&__view {
+			display: none;
+
+			&.is-active {
+				display: none;
+			}
+		}
+	}
+
+	.loki-contact {
+		display: flex;
+		flex-direction: column;
+
+		&__form {
+			margin-top: $base-height * 300;
+			margin-bottom: $base-height * 150;
+			width: 100%;
+	
+			form {
+				display: inline-block;
+			}
+		}
+		&__form-group {	
+			label {
+				font-size: $base-height * 18;
+				display: block;
+			}
+			input {
+				font-size: $base-height * 26;
+			}
+		}
+		&__form-submitted {
+			padding-right: 15%;
+	
+			h1, 
+			i {
+				font-size: $base-height * 86;
+			}
+		}
+		&__details {
+			width: 100%;
+			padding-bottom: $base-height * 200;
+		}
+		&__address-left, 
+		&__address-right {
+			span {
+				font-size: $base-height * 20;
+			}
+		}
+	}
+}
+
+/* ============================================================ */
+
+/* ============================================================ */
+/* Elements */
+
+.loki-menu-button {
+	color: $menu-btn-color;;
+	position: fixed;
+	top: $base-height * 20;
+	right: $base-width * 30;
+	z-index: 49;
+
+	&:hover, 
+	&:focus, 
+	&.active {
+		color: $menu-btn-color;;
+	}
+
+	> i {
+		font-size: $base-width * 50;
+	}
+}
+
+.loki-link {
+	font-family: 'Raleway SemiBold', sans-serif;
+	color: $brand-secondary;
+	font-size: $base-width * 30;
+	position: absolute;
+	top: $base-height * 20;
+	left: $base-width * 20;
+
+	> i {
+		color: $title-color-yellow;
+		margin-left: $base-width * 10;
+	}
+}
+
+.loki-btn {
+	font-family: 'Raleway Bold', sans-serif;
+	background-color: transparent;
+	color: $projects-color-title;
+	text-transform: uppercase;
+    display: inline-block;
+    margin-top: $base-height * 40;
+    padding: $base-height * 10 $base-width * 30;
+	border: solid 1px $projects-color-title;
+	transition: background-color 0.3s linear;
+
+	&:hover {
+		background-color: $projects-color-title;
+		color: $title-color-white !important;
+		text-decoration: none;
+	}
+	&:focus, 
+	&:active {
+		color: $projects-color-title;
+		outline: none;
+	}
+	&[ng-disabled] {
+		color: #cccccc;
+		border-color: #cccccc;
+		pointer-events: none;
+	}
+	&:not(:disabled) {
+		color: $projects-color-title;
+		border-color: $projects-color-title;
+		pointer-events: all;
+	}
+}
+
+@media (orientation:portrait) {
+	.loki-menu-button {
+		> i {
+			font-size: $base-height * 50;
+		}
+	}
+
+	.loki-link {
+		font-size: $base-height * 30;
+	}
+}
+
+/* ============================================================ */
+
+/* ============================================================ */
+/* Components */
+
+.loki-menu {
+	background-color: $menu-bg-color;
+	display: block;
+	width: $base-width * 350;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: $base-width * -350;
+	transition: right 0.2s linear;
+	z-index: 50;
+
+	> ul {
+		list-style-type: none;
+		margin: $base-height * 150 0 0;
+		padding: 0
+	}
+	li {
+		font-family: 'Raleway Black', sans-serif;
+		font-size: $base-width * 40;
+		display: block;
+		padding: $base-height * 5 $base-width * 40;
+		
+		> a {
+			color: $menu-color-link;
+			transition: color 0.3s ease-in-out;
+
+			&:hover, 
+			&:focus, 
+			&:active {
+				color: $menu-color-link-hover;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__button-close {
+		color: $menu-btn-close-color;
+		position: absolute;
+		top: $base-height * 20;
+		right: $base-width * 30;
+
+		&:hover, 
+		&:focus, 
+		&.active {
+			color: $menu-btn-close-color;
+		}
+
+		> i {
+			font-size: $base-width * 50;
+		}
+	}
+
+	&.is-toggled {
+		right: 0;
+	}
+}
+
+@media (orientation:portrait) {
+	.loki-menu {
+		width: $base-height * 350;
+		right: $base-height * -350;
+
+		li {
+			font-size: $base-height * 40;
+			padding: $base-width * 5 $base-height * 40;
+		}
+	
+		&__button-close {
+			> i {
+				font-size: $base-height * 50;
+			}
+		}
+	}
+}
+
+/* ============================================================ */
+
+/* ============================================================ */
+/* Block */
+
+.loki-title {
+	font-family: 'Raleway Black', sans-serif;
+	font-size: $base-width * 32;
+	letter-spacing: 5px;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+
+	&--black {
+		color: $title-color-black;
+	}
+	&--white {
+		color: $title-color-white;
+	}
+	&--pink {
+		color: $title-color-pink;
+	}
+	&--yellow {
+		color: $title-color-yellow;
+	}
+	&--purple {
+		color: $title-color-purple;
+	}
+	&--blue {
+		color: $title-color-blue;
+	}
+}
+
+.loki-dict {
+	font-size: $base-width * 16;
+
+	&__title {
+		font-size: $base-width * 32;
+
+		> span {
+			font-family: 'Raleway SemiBold Italic', sans-serif;
+			font-size: $base-height * 18;
+		}
+	}
+	&__pron {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	&__content {
+		> span {
+			font-family: 'Raleway SemiBold', sans-serif;
+		}
+	}
+}
+
+@media (orientation:portrait) {
+	.loki-title {
+		font-size: $base-height * 32;
+	}
+
+	.loki-dict {
+		font-size: $base-height * 16;
+
+		&__title {
+			font-size: $base-height * 32;
+	
+			> span {
+				font-size: $base-height * 18;
+			}
+		}
+	}
+}
+
+/* ============================================================ */
+
+/* ============================================================ */
+/* Trumps */
+
+.red {background-color: red;}
+.yellow {background-color: yellow;}
+.green {background-color: green;}
+.blue {background-color: blue;}
+.white {background-color: white;}
+.black {background-color: black;}
+
+.c-black {color: $brand-primary !important;}
+.c-white {color: $brand-secondary !important;}
+.c-pink {color: #FE2AA9 !important;}
+.c-yellow {color: #FDCC66 !important;}
+.c-purple {color: #451BDF !important;}
+.c-blue {color: #56CFE0 !important;}
+
+/* ============================================================ */
+
+.copyright {
+	font-size: 12px;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+}
